@@ -12,6 +12,13 @@ class Card extends Component
 		}
 	};
 	
+	toggleDetails()
+	{
+		this.setState({
+			showDetails: !this.state.showDetails
+		});
+	}
+	
 	render()
 	{
 		let cardDetails;
@@ -33,7 +40,7 @@ class Card extends Component
 				<div className="card__title" 
 						onClick=
 						{ 
-							() => this.setState({showDetails: !this.state.showDetails})
+							this.toggleDetails.bind(this)
 						}>
 					{this.props.title}
 				</div>
